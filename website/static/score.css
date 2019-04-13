@@ -1,0 +1,23 @@
+/* Formatting score page */
+body {
+    background-color: #000000;
+}
+
+#HomeHeader {
+    background-color: white;
+    border: 3px dashed #19accc;
+    padding: 25px;
+    font-size: 80px;
+}
+
+/* Formatting table */
+table, th, td {
+    color: rgb(37, 115, 211);
+    border: 1px solid purple;
+    background: white
+    
+}
+
+button {
+    size: 100px;
+}

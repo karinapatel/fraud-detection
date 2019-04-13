@@ -1,0 +1,43 @@
+<html>
+<head>
+    <!-- Header for prediction dashboard -->
+    <title>Prediction Scores </title>
+    <link rel="stylesheet" href='static/score.css'/>
+</head>
+
+<body>
+
+    <h1 id='HomeHeader'> Fraud Risk Level </h1>
+    <!-- See plot metrics -->
+    <button id='see-dashboard' href='/metrics'> CLICK ME TO SEE GRAPHS! </button>
+
+    <!-- Table of top 50 fraud events with their probabilities -->
+    <table>
+        <tr>
+            <!-- The table titles -->
+            <th> ID </th>
+            <th>Name</th> 
+            <th>Prediction</th>
+            <th>Fraud Degree</th>
+            <th>Top Prediction Indicators</th>
+        </tr>
+        {% for key,value in result.items() %}
+            <tr>
+                {% for item in value %}
+                    <td>{{item}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+        
+
+    
+    
+
+    
+#get jquery for clicking buttons
+            
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='static/table.js'></script>
+</body>
+</html>

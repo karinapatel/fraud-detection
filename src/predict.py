@@ -1,0 +1,29 @@
+import pickle
+import pandas as pd
+from pymongo import MongoClient
+from transform import transform_test
+
+#takes in one single json line from the live data
+def predict(row):
+    df = pd.DataFrame.from_dict([row], orient='columns')
+    #open model RF
+    with open('website/model.pkl', 'rb') as f:
+        model = pickle.load(f)
+
+    df1 = transform_test(df)
+
+    #predict probability using model
+    prediction = model.predict_proba(df1.values.reshape(1, -1))[0][1]
+
+    row['prediction'] = prediction
+
+    #returns the prob of fraud which we can later classify using the threshold chosen
+    return row
+
+def add_to_mongo(row):
+    #start up Mongo
+    client = MongoClient()
+    db = client['fraud']
+    coll=db['live']
+    coll.insert(row)
+        

@@ -1,0 +1,44 @@
+/* Formatting Fake news page */
+#HomeHeader{
+    background-color: white;
+    border: 3px dashed #19accc;
+    padding: 25px;
+    font-size: 80px;
+}
+
+#HomeHeader2{
+    background-color: white;
+    border: 3px dashed #6a3ddc;
+    margin: 25px;
+    padding: 25px; 
+    font-size: 50px
+}
+
+img {
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    display: block;
+}
+
+h1 {
+    font-family: 'Gugi', cursive, bold;
+    color: black;
+    border: 3px dashed green;
+    padding: 25px;
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Gugi', cursive, bold;
+    color: black;
+    border: 3px dashed green;
+    padding: 25px;
+    margin: auto;
+    text-align: center;
+}
+
+body {
+    background-color: #000000;
+}
